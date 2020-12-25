@@ -4,14 +4,22 @@ import 'package:gsgtrining/util/color.dart';
 import 'package:localize_and_translate/localize_and_translate.dart';
 import 'package:string_validator/string_validator.dart';
 
-class Call extends StatelessWidget {
+class Call extends StatefulWidget {
+  @override
+  _CallState createState() => _CallState();
+}
+
+class _CallState extends State<Call> {
   GlobalKey<FormState> formKey = GlobalKey();
 
   String email;
 
   String ti;
+
   int phone;
+
   String cont;
+
   saveForm() {
     bool validateResult = formKey.currentState.validate();
     if (validateResult) {
@@ -71,22 +79,22 @@ class Call extends StatelessWidget {
               key: formKey,
               child: Column(children: [
                 CustomTextField(
-                  label: translator.translate("text41"),
+                  hintt: translator.translate("text41"),
                   saveFunction: saveEmail,
                   validateFun: validateEmail,
                 ),
                 CustomTextField(
-                  label: translator.translate("text16"),
+                  hintt: translator.translate("text16"),
                   saveFunction: savePhont,
                   validateFun: validateNull,
                 ),
                 CustomTextField(
-                  label: translator.translate("text49"),
+                  hintt: translator.translate("text49"),
                   saveFunction: saveTi,
                   validateFun: validateNull,
                 ),
                 Container(
-                    margin: EdgeInsets.only(right: 20, top: 5),
+                    margin: EdgeInsets.only(right: 20, top: 10),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
@@ -97,7 +105,7 @@ class Call extends StatelessWidget {
                   margin: EdgeInsets.symmetric(horizontal: 20),
                   child: TextField(
                     textAlign: TextAlign.end,
-                    maxLines: 8,
+                    maxLines: 3,
                     decoration: InputDecoration(
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(15),

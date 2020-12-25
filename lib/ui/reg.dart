@@ -1,8 +1,10 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:gsgtrining/ui/reSto.dart';
 import 'package:gsgtrining/ui/rgc.dart';
 import 'package:gsgtrining/util/color.dart';
+import 'package:gsgtrining/util/custom_router.gr.dart';
 import 'package:localize_and_translate/localize_and_translate.dart';
 
 class TyReges extends StatelessWidget {
@@ -38,10 +40,7 @@ class TyReges extends StatelessWidget {
               children: [
                 GestureDetector(
                   onTap: () {
-                    Navigator.of(context)
-                        .push(MaterialPageRoute(builder: (context) {
-                      return RegisterStore();
-                    }));
+                    ExtendedNavigator.root.push(Routes.registerStore);
                   },
                   child: Container(
                     margin: EdgeInsets.only(top: 50),
@@ -78,10 +77,7 @@ class TyReges extends StatelessWidget {
                 ),
                 GestureDetector(
                   onTap: () {
-                    Navigator.of(context)
-                        .push(MaterialPageRoute(builder: (context) {
-                      return RegClinet();
-                    }));
+                    ExtendedNavigator.root.push(Routes.regClinet);
                   },
                   child: Container(
                     margin: EdgeInsets.only(top: 100),

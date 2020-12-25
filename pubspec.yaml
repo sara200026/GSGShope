@@ -30,8 +30,6 @@ dependencies:
   localize_and_translate: ^3.0.3
 
 
-
-
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.0
@@ -40,7 +38,8 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   carousel_pro: ^1.0.0
-
+  auto_route_generator: ^0.6.10
+  build_runner:
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

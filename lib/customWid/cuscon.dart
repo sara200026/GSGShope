@@ -1,7 +1,9 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:gsgtrining/ui/store.dart';
 import 'package:gsgtrining/util/color.dart';
+import 'package:gsgtrining/util/custom_router.gr.dart';
 
 class CustomCon extends StatelessWidget {
   String text;
@@ -11,9 +13,7 @@ class CustomCon extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Navigator.of(context).push(MaterialPageRoute(builder: (context) {
-          return Store();
-        }));
+        ExtendedNavigator.root.push(Routes.store);
       },
       child: Container(
         margin: EdgeInsets.all(10),

@@ -113,22 +113,22 @@ class Edit extends StatelessWidget {
                 child: Column(
                   children: [
                     CustomTextField(
-                      label: 'شركة الامانة',
+                      hintt: 'شركة الامانة',
                       saveFunction: saveCom,
                       validateFun: validateNull,
                     ),
                     CustomTextField(
-                      label: 'معتصم محمد',
+                      hintt: 'معتصم محمد',
                       saveFunction: saveuser,
                       validateFun: validateNull,
                     ),
                     CustomTextField(
-                      label: '*******',
+                      hintt: '*******',
                       saveFunction: savePassword,
                       validateFun: validatePassword,
                     ),
                     CustomTextField(
-                      label: 'example@gmail.com',
+                      hintt: 'example@gmail.com',
                       saveFunction: saveEmail,
                       validateFun: validateEmail,
                     ),
@@ -151,17 +151,17 @@ class Edit extends StatelessWidget {
                       ),
                     ),
                     CustomTextField(
-                      label: '0394 22 34',
+                      hintt: '0394 22 34',
                       saveFunction: savePhine,
                       validateFun: validateNull,
                     ),
                     CustomTextField(
-                      label: 'example.jpeg ',
+                      hintt: 'example.jpeg ',
                       saveFunction: savelogo,
                       validateFun: validateNull,
                     ),
                     CustomTextField(
-                      label: 'مشتل نايف ',
+                      hintt: 'مشتل نايف ',
                       saveFunction: saveNa,
                       validateFun: validateNull,
                     ),
@@ -175,7 +175,7 @@ class Edit extends StatelessWidget {
                       ),
                     ),
                     CustomTextField(
-                      label: 'نشاط تجاري',
+                      hintt: 'نشاط تجاري',
                       saveFunction: savetra,
                       validateFun: validateNull,
                     ),

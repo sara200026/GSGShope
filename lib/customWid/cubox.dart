@@ -1,15 +1,14 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:gsgtrining/ui/massege.dart';
+import 'package:gsgtrining/util/custom_router.gr.dart';
 
 class Cusbox extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Navigator.of(context).push(MaterialPageRoute(builder: (context) {
-          return Massage();
-        }));
+        ExtendedNavigator.root.push(Routes.massage);
       },
       child: Container(
         margin: EdgeInsets.only(top: 30, bottom: 30),

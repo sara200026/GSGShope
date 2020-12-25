@@ -4,9 +4,9 @@ import 'package:flutter/widgets.dart';
 class CustomTextField extends StatelessWidget {
   Function validateFun;
   Function saveFunction;
-  String label;
+  String hintt;
   CustomTextField(
-      {@required this.label,
+      {@required this.hintt,
       @required this.saveFunction,
       @required this.validateFun});
   @override
@@ -18,13 +18,13 @@ class CustomTextField extends StatelessWidget {
         ),
         Container(
           width: 380,
-          height: 50,
+          // height: 70,
           child: TextFormField(
             textAlign: TextAlign.end,
             validator: (newValue) => validateFun(newValue),
             onSaved: (newValue) => saveFunction(newValue),
             decoration: InputDecoration(
-                hintText: label,
+                hintText: hintt,
                 border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(30))),
           ),

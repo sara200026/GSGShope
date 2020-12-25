@@ -1,3 +1,4 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -8,6 +9,7 @@ import 'package:gsgtrining/ui/cond.dart';
 import 'package:gsgtrining/ui/edit.dart';
 import 'package:gsgtrining/ui/product.dart';
 import 'package:gsgtrining/util/color.dart';
+import 'package:gsgtrining/util/custom_router.gr.dart';
 import 'package:localize_and_translate/localize_and_translate.dart';
 
 import 'cusListTi.dart';
@@ -71,10 +73,7 @@ class CusDrawer extends StatelessWidget {
                   title: translator.translate("text38"),
                   icon: Icon(Icons.message_outlined),
                   onClick: () {
-                    Navigator.of(context)
-                        .push(MaterialPageRoute(builder: (context) {
-                      return Box();
-                    }));
+                    ExtendedNavigator.root.push(Routes.box);
                   },
                 ),
                 Divider(
@@ -85,10 +84,7 @@ class CusDrawer extends StatelessWidget {
                   title: translator.translate("text39"),
                   icon: Icon(Icons.edit),
                   onClick: () {
-                    Navigator.of(context)
-                        .push(MaterialPageRoute(builder: (context) {
-                      return Edit();
-                    }));
+                    ExtendedNavigator.root.push(Routes.edit);
                   },
                 ),
                 Divider(
@@ -100,10 +96,7 @@ class CusDrawer extends StatelessWidget {
                   title: translator.translate("text31"),
                   icon: Icon(Icons.store),
                   onClick: () {
-                    Navigator.of(context)
-                        .push(MaterialPageRoute(builder: (context) {
-                      return Product();
-                    }));
+                    ExtendedNavigator.root.push(Routes.product);
                   },
                   isLeading: true,
                 ),
@@ -115,10 +108,7 @@ class CusDrawer extends StatelessWidget {
                   icon: Icon(Icons.phone),
                   title: translator.translate("text41"),
                   onClick: () {
-                    Navigator.of(context)
-                        .push(MaterialPageRoute(builder: (context) {
-                      return Call();
-                    }));
+                    ExtendedNavigator.root.push(Routes.call);
                   },
                 ),
                 Divider(
@@ -157,10 +147,7 @@ class CusDrawer extends StatelessWidget {
                           children: [
                             GestureDetector(
                               onTap: () {
-                                Navigator.of(context)
-                                    .push(MaterialPageRoute(builder: (context) {
-                                  return Conditions();
-                                }));
+                                ExtendedNavigator.root.push(Routes.conditions);
                               },
                               child: Container(
                                 margin: EdgeInsets.only(left: 20),
@@ -175,10 +162,7 @@ class CusDrawer extends StatelessWidget {
                             ),
                             GestureDetector(
                               onTap: () {
-                                Navigator.of(context)
-                                    .push(MaterialPageRoute(builder: (context) {
-                                  return AboutApp();
-                                }));
+                                ExtendedNavigator.root.push(Routes.aboutApp);
                               },
                               child: Container(
                                 margin: EdgeInsets.only(right: 20),

@@ -99,7 +99,10 @@ class Massage extends StatelessWidget {
                     child: Icon(Icons.face_outlined)),
                 Container(
                     margin: EdgeInsets.only(right: 20),
-                    child: Text(translator.translate("text47"))),
+                    child: Text(
+                      translator.translate("text47"),
+                      style: TextStyle(fontSize: 10),
+                    )),
                 Container(
                   width: 60,
                   height: 100,

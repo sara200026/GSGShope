@@ -1,24 +1,36 @@
 import 'dart:ui';
 
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:gsgtrining/customWid/custom_textField.dart';
 import 'package:gsgtrining/util/color.dart';
+import 'package:gsgtrining/util/custom_router.gr.dart';
 import 'package:localize_and_translate/localize_and_translate.dart';
 import 'package:string_validator/string_validator.dart';
 
 import 'home.dart';
 
-class RegisterStore extends StatelessWidget {
+class RegisterStore extends StatefulWidget {
+  @override
+  _RegisterStoreState createState() => _RegisterStoreState();
+}
+
+class _RegisterStoreState extends State<RegisterStore> {
   GlobalKey<FormState> formKey = GlobalKey();
 
   String email;
 
   String password;
+
   String comName;
+
   String userNa;
-  int phone;
+
+  String phone;
+
   String logo;
+
   String tra;
 
   saveCom(String value) {
@@ -29,7 +41,7 @@ class RegisterStore extends StatelessWidget {
     this.userNa = value;
   }
 
-  savePhine(int value) {
+  savePhine(String value) {
     this.phone = value;
   }
 
@@ -45,6 +57,7 @@ class RegisterStore extends StatelessWidget {
     bool validateResult = formKey.currentState.validate();
     if (validateResult) {
       formKey.currentState.save();
+      ExtendedNavigator.root.push(Routes.home);
     } else {
       return;
     }
@@ -114,22 +127,22 @@ class RegisterStore extends StatelessWidget {
                 child: Column(
                   children: [
                     CustomTextField(
-                      label: translator.translate("text11"),
+                      hintt: translator.translate("text11"),
                       saveFunction: saveCom,
                       validateFun: validateNull,
                     ),
                     CustomTextField(
-                      label: translator.translate("text12"),
+                      hintt: translator.translate("text12"),
                       saveFunction: saveuser,
                       validateFun: validateNull,
                     ),
                     CustomTextField(
-                      label: translator.translate("text13"),
+                      hintt: translator.translate("text13"),
                       saveFunction: savePassword,
                       validateFun: validatePassword,
                     ),
                     CustomTextField(
-                      label: translator.translate("text14"),
+                      hintt: translator.translate("text14"),
                       saveFunction: saveEmail,
                       validateFun: validateEmail,
                     ),
@@ -152,17 +165,17 @@ class RegisterStore extends StatelessWidget {
                       ),
                     ),
                     CustomTextField(
-                      label: translator.translate("text16"),
+                      hintt: translator.translate("text16"),
                       saveFunction: savePhine,
                       validateFun: validateNull,
                     ),
                     CustomTextField(
-                      label: translator.translate("text17"),
+                      hintt: translator.translate("text17"),
                       saveFunction: savelogo,
                       validateFun: validateNull,
                     ),
                     CustomTextField(
-                      label: translator.translate("text18"),
+                      hintt: translator.translate("text18"),
                       saveFunction: savetra,
                       validateFun: validateNull,
                     ),
@@ -181,10 +194,6 @@ class RegisterStore extends StatelessWidget {
                             style: TextStyle(fontSize: 20),
                           ),
                           onPressed: () {
-                            Navigator.of(context)
-                                .push(MaterialPageRoute(builder: (context) {
-                              return Home();
-                            }));
                             saveForm();
                           }),
                     )

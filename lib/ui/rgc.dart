@@ -1,25 +1,34 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:gsgtrining/customWid/custom_textField.dart';
 import 'package:gsgtrining/util/color.dart';
+import 'package:gsgtrining/util/custom_router.gr.dart';
 import 'package:localize_and_translate/localize_and_translate.dart';
 import 'package:string_validator/string_validator.dart';
 import 'home.dart';
 
-class RegClinet extends StatelessWidget {
+class RegClinet extends StatefulWidget {
+  @override
+  _RegClinetState createState() => _RegClinetState();
+}
+
+class _RegClinetState extends State<RegClinet> {
   GlobalKey<FormState> formKey = GlobalKey();
 
   String email;
 
   String password;
+
   String userNa;
-  int phone;
+
+  String phone;
 
   saveuser(String value) {
     this.userNa = value;
   }
 
-  savePhine(int value) {
+  savePhine(String value) {
     this.phone = value;
   }
 
@@ -27,6 +36,7 @@ class RegClinet extends StatelessWidget {
     bool validateResult = formKey.currentState.validate();
     if (validateResult) {
       formKey.currentState.save();
+      ExtendedNavigator.root.push(Routes.home);
     } else {
       return;
     }
@@ -99,22 +109,22 @@ class RegClinet extends StatelessWidget {
                 child: Column(
                   children: [
                     CustomTextField(
-                      label: translator.translate("text12"),
+                      hintt: translator.translate("text12"),
                       saveFunction: saveuser,
                       validateFun: validateNull,
                     ),
                     CustomTextField(
-                      label: translator.translate("text13"),
+                      hintt: translator.translate("text13"),
                       saveFunction: savePassword,
                       validateFun: validatePassword,
                     ),
                     CustomTextField(
-                      label: translator.translate("text14"),
+                      hintt: translator.translate("text14"),
                       saveFunction: saveEmail,
                       validateFun: validateEmail,
                     ),
                     CustomTextField(
-                      label: translator.translate("text16"),
+                      hintt: translator.translate("text16"),
                       saveFunction: savePhine,
                       validateFun: validateNull,
                     ),
@@ -133,10 +143,6 @@ class RegClinet extends StatelessWidget {
                             style: TextStyle(fontSize: 20),
                           ),
                           onPressed: () {
-                            Navigator.of(context)
-                                .push(MaterialPageRoute(builder: (context) {
-                              return Home();
-                            }));
                             saveForm();
                           }),
                     )
